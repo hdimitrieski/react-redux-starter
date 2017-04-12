@@ -1,0 +1,30 @@
+{
+  "name": "react-redux-starter",
+  "version": "0.0.0",
+  "description": "Starter project for creating applications with React and Redux.",
+  "engines": {
+    "npm": ">=3"
+  },
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hdimitrieski/react-redux-starter.git"
+  },
+  "keywords": [
+    "react",
+    "redux",
+    "react-router",
+    "webpack",
+    "boilerplate",
+    "starter"
+  ],
+  "author": "Hristijan Dimitrieski",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hdimitrieski/react-redux-starter/issues"
+  },
+  "homepage": "https://github.com/hdimitrieski/react-redux-starter#readme"
+}
