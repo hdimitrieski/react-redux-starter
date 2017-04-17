@@ -7,6 +7,7 @@
   },
   "main": "index.js",
   "scripts": {
+    "lint": "eslint **/*.{js,jsx} --color",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -27,12 +28,21 @@
     "url": "https://github.com/hdimitrieski/react-redux-starter/issues"
   },
   "homepage": "https://github.com/hdimitrieski/react-redux-starter#readme",
-  "devDependencies": {
+  "dependencies": {
+    "prop-types": "^15.5.8",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
     "react-redux": "^5.0.4",
     "react-router": "^4.1.1",
     "react-router-dom": "^4.1.1",
     "redux": "^3.6.0"
+  },
+  "devDependencies": {
+    "babel-eslint": "^7.2.2",
+    "eslint": "^3.19.0",
+    "eslint-config-airbnb": "^14.1.0",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^4.0.0",
+    "eslint-plugin-react": "^6.10.3"
   }
 }
