@@ -8,7 +8,9 @@
   "main": "index.js",
   "scripts": {
     "lint": "eslint **/*.{js,jsx} --color",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "cross-env NODE_ENV=test babel-node tools/test.js --colors",
+    "test:cover": "npm run test -- --coverage",
+    "test:watch": "npm run test -- --watch"
   },
   "repository": {
     "type": "git",
@@ -38,11 +40,23 @@
     "redux": "^3.6.0"
   },
   "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-core": "^6.24.1",
     "babel-eslint": "^7.2.2",
+    "babel-jest": "^19.0.0",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-react-es2015": "^1.2.0",
+    "babel-preset-stage-0": "^6.24.1",
+    "babel-register": "^6.24.1",
+    "cross-env": "^4.0.0",
+    "enzyme": "^2.8.2",
     "eslint": "^3.19.0",
     "eslint-config-airbnb": "^14.1.0",
     "eslint-plugin-import": "^2.2.0",
     "eslint-plugin-jsx-a11y": "^4.0.0",
-    "eslint-plugin-react": "^6.10.3"
+    "eslint-plugin-react": "^6.10.3",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^19.0.2",
+    "react-addons-test-utils": "^15.5.1"
   }
 }
