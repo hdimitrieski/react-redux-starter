@@ -49,7 +49,9 @@ const fileLoader = {
     /\.css$/,
     /\.scss$/,
     /\.sass$/,
-    /\.json$/
+    /\.json$/,
+    /\.jpe?g$/,
+    /\.png$/
   ],
   loader: 'file-loader',
   options: {
