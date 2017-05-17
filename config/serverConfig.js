@@ -5,7 +5,7 @@ const {
   }
 } = require('./projectConfig');
 
-//TODO proxy configuration
+// TODO proxy configuration
 
 module.exports = {
   port: process.env.PORT || 3000,

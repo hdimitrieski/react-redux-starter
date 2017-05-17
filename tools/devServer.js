@@ -1,3 +1,5 @@
+/* eslint-disable import/no-extraneous-dependencies */
+/* eslint-disable no-console */
 const chalk = require('chalk');
 const express = require('express');
 const open = require('open');
@@ -9,7 +11,6 @@ const {
   host,
   port,
   entryHtml,
-  assetsPath,
   serverOptions
 } = require('../config/serverConfig');
 
@@ -21,7 +22,7 @@ const publicPath = webpackConfig.output.publicPath;
 
 app.use(
   webpackDevMiddleware(compiler, {
-    publicPath: publicPath,
+    publicPath,
     ...serverOptions
   })
 );
@@ -30,18 +31,12 @@ app.use(webpackHotMiddleware(compiler, {
   path: `${publicPath}__webpack_hmr`
 }));
 
-// Serve static assets from /assets since Webpack is unaware of
-// these files. This middleware doesn't need to be enabled outside
-// of development since this directory will be copied into /dist
-// when the application is compiled.
-app.use(express.static(assetsPath));
-
 // This rewrites all routes requests to the root /index.html file
 app.get('*', (req, res) => {
   res.sendFile(entryHtml);
 });
 
-//TODO proxy
+// TODO proxy
 
 app.listen(port, host, (err) => {
   if (err) {

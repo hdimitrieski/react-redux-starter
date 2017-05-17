@@ -1,3 +1,4 @@
+/* eslint-disable import/no-extraneous-dependencies */
 const jest = require('jest');
 const jestConfig = require('../config/jestConfig');
 

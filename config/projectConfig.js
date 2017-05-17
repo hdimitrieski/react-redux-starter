@@ -22,7 +22,7 @@ const publicPath = '/';
 const base = path.resolve(__dirname, '..');
 
 const basePath = (...dirNames) => {
-  let dirPath = path.join(base, ...dirNames);
+  const dirPath = path.join(base, ...dirNames);
 
   return (fileName = '') => path.join(dirPath, fileName);
 };

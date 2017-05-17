@@ -1,3 +1,4 @@
+/* eslint-disable import/no-extraneous-dependencies */
 const webpack = require('webpack');
 const autoprefixer = require('autoprefixer');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -18,7 +19,7 @@ const output = {
   // Build folder.
   path: paths.dist(),
   // This is the URL that app is served from.
-  publicPath: publicPath,
+  publicPath,
   // This does not produce a real file. It's just the virtual path that is
   // served by the development server in development.
   //
