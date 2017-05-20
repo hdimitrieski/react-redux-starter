@@ -6,6 +6,8 @@ const open = require('open');
 const webpack = require('webpack');
 const webpackDevMiddleware = require('webpack-dev-middleware');
 const webpackHotMiddleware = require('webpack-hot-middleware');
+const Dashboard = require('webpack-dashboard');
+const DashboardPlugin = require('webpack-dashboard/plugin');
 const webpackConfig = require('../config/webpackDevConfig');
 const {
   host,
@@ -18,6 +20,8 @@ console.log(chalk.green('Starting app in dev mode...'));
 
 const app = express();
 const compiler = webpack(webpackConfig);
+const dashboard = new Dashboard();
+compiler.apply(new DashboardPlugin(dashboard.setData));
 const publicPath = webpackConfig.output.publicPath;
 
 app.use(

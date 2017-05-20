@@ -16,7 +16,7 @@ module.exports = {
     contentBase: paths.source(),
     hot: true,
     noInfo: false,
-    quiet: false,
+    quiet: true,
     stats: {
       colors: true
     },
