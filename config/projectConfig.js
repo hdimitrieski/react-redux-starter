@@ -15,6 +15,8 @@ const mediaDirectory = 'static/media';
 const devBundle = '[name].bundle.js';
 const cssFileName = '[name].[contenthash:8].css';
 const mediaFileName = '[name].[hash:8].[ext]';
+const chunkJsFiles = '[name].[chunkhash:8].js';
+const vendorBundleName = 'vendor';
 
 const publicPath = '/';
 
@@ -52,7 +54,9 @@ config.output = {
   cssFiles: `${cssDirectory}/${cssFileName}`,
   mediaFiles: `${mediaDirectory}/${mediaFileName}`,
   jsFiles: `${jsDirectory}/${devBundle}`,
-  manifestFile
+  chunkJsFiles: `${jsDirectory}/${chunkJsFiles}`,
+  manifestFile,
+  vendorBundleName
 };
 
 module.exports = config;

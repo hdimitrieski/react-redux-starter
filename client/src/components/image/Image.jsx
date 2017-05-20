@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './Image.scss';
+import styles from './Image.css';
 
 export default () => (
   <div className={styles.test}>

@@ -1,7 +1,7 @@
 import React from 'react';
 import Logo from './logo/Logo';
 import Image from './image/Image';
-import './App.scss';
+import './App.css';
 
 const App = () => (
   <div>
