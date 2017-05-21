@@ -1,7 +1,9 @@
+/* eslint-disable import/no-extraneous-dependencies */
 const autoprefixer = require('autoprefixer');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const postcssFlexbugsFixes = require('postcss-flexbugs-fixes');
 
 const {
   publicPath,
@@ -95,7 +97,7 @@ const postCssLoader = {
   options: {
     ident: 'postcss',
     plugins: () => [
-      require('postcss-flexbugs-fixes'),
+      postcssFlexbugsFixes,
       autoprefixer({
         browsers: [
           '>1%',

@@ -1,9 +1,11 @@
+/* eslint-disable import/no-extraneous-dependencies */
+/* eslint-disable no-console */
 const chalk = require('chalk');
 const compile = require('./compile');
 const copy = require('./copy');
 const webpackConfig = require('../config/webpackProdConfig');
 
-(async function build() {
+((async function build() {
   try {
     await compile(webpackConfig);
     await copy();
@@ -13,4 +15,4 @@ const webpackConfig = require('../config/webpackProdConfig');
     console.log(chalk.red(error));
     process.exit(1);
   }
-})();
+})());
