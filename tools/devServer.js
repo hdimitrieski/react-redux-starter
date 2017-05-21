@@ -13,6 +13,7 @@ const {
   host,
   port,
   entryHtml,
+  publicPath,
   serverOptions
 } = require('../config/serverConfig');
 
@@ -22,7 +23,6 @@ const app = express();
 const compiler = webpack(webpackConfig);
 const dashboard = new Dashboard();
 compiler.apply(new DashboardPlugin(dashboard.setData));
-const publicPath = webpackConfig.output.publicPath;
 
 app.use(
   webpackDevMiddleware(compiler, {
@@ -34,6 +34,9 @@ app.use(
 app.use(webpackHotMiddleware(compiler, {
   path: `${publicPath}__webpack_hmr`
 }));
+
+// serve static files
+app.use(express.static(publicPath));
 
 // This rewrites all routes requests to the root /index.html file
 app.get('*', (req, res) => {

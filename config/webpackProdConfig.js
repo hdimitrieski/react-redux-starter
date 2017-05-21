@@ -2,7 +2,6 @@ const autoprefixer = require('autoprefixer');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const ManifestPlugin = require('webpack-manifest-plugin');
 
 const {
   publicPath,
@@ -11,7 +10,6 @@ const {
     mediaFiles,
     cssFiles,
     chunkJsFiles,
-    manifestFile,
     vendorBundleName
   },
   entry: {
@@ -179,13 +177,6 @@ const extractTextPlugin = new ExtractTextPlugin({
   allChunks: true
 });
 
-// Generate a manifest file which contains a mapping of all asset filenames
-// to their corresponding output file so that tools can pick it up without
-// having to parse "index.html".
-const manifestPlugin = new ManifestPlugin({
-  fileName: manifestFile,
-});
-
 // Use CommonsChinkPlugin to create a separate bundle of vendor libraries
 // so that they are cached separately.
 const commonsChunkPlugin = new webpack.optimize.CommonsChunkPlugin({
@@ -215,7 +206,6 @@ module.exports = {
     definePlugin,
     uglifyJsPlugin,
     extractTextPlugin,
-    manifestPlugin,
     commonsChunkPlugin
   ]
 };

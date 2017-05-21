@@ -11,7 +11,7 @@ module.exports = {
   port: process.env.PORT || 3000,
   host: process.env.HOST || 'localhost',
   entryHtml,
-  assetsPath: paths.public(),
+  publicPath: paths.public(),
   serverOptions: {
     contentBase: paths.source(),
     hot: true,

@@ -1,17 +1,18 @@
 const path = require('path');
 
 // app
-const sourceDirectory = 'client/src';
-const distDirectory = 'target/dist';
-const publicDirectory = 'client/assets';
+const client = 'client';
+const sourceDirectory = path.join(client, 'src');
+const publicDirectory = path.join(client, 'public');
+const distDirectory = path.join('target', 'dist');
 const entryHtmlName = 'index.html';
 const entryJsName = 'index.jsx';
-const manifestFile = 'asset-manifest.json';
 
 // output
-const jsDirectory = 'static/js';
-const cssDirectory = 'static/css';
-const mediaDirectory = 'static/media';
+const staticDirectory = 'static';
+const jsDirectory = path.join(staticDirectory, 'js');
+const cssDirectory = path.join(staticDirectory, 'css');
+const mediaDirectory = path.join(staticDirectory, 'media');
 const devBundle = '[name].bundle.js';
 const cssFileName = '[name].[contenthash:8].css';
 const mediaFileName = '[name].[hash:8].[ext]';
@@ -51,11 +52,10 @@ config.entry = {
 
 // output files
 config.output = {
-  cssFiles: `${cssDirectory}/${cssFileName}`,
-  mediaFiles: `${mediaDirectory}/${mediaFileName}`,
-  jsFiles: `${jsDirectory}/${devBundle}`,
-  chunkJsFiles: `${jsDirectory}/${chunkJsFiles}`,
-  manifestFile,
+  cssFiles: path.join(cssDirectory, cssFileName),
+  mediaFiles: path.join(mediaDirectory, mediaFileName),
+  jsFiles: path.join(jsDirectory, devBundle),
+  chunkJsFiles: path.join(jsDirectory, chunkJsFiles),
   vendorBundleName
 };
 
